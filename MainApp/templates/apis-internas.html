@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block estilos_pagina %}
+    <link rel="stylesheet" href={% static "css/apis.css" %}>
+{% endblock estilos_pagina %}
+
+
+{% block contenido_pagina %}
+
+<!-- API INTERNA DE CATEGORÍAS PARA ADMINISTRADOR Y VENDEDOR -->
+{% if usuario.tipo_usuario.descripcion == "ADMINISTRADOR" or usuario.tipo_usuario.descripcion == "VENDEDOR" %}
+
+    <div class="container">
+        <div class="api">
+            <h1>API INTERNA DE CATEGORÍAS</h1>
+            {% for categoria in list_categorias %}
+                <p># {{categoria}}</p>
+            {% endfor %}
+        </div>
+        <!-- Agregar nueva categoría -->
+        <form action="{% url 'MainApp:apis-internas' %}" method="post">
+            {% csrf_token %}
+            {{form_categoria.as_p|safe}}
+            <input type="hidden" name="tipo_form" value="categoria">
+            <button type="submit" id='submit-btn'>Agregar ítem</button>
+        </form>
+    </div>
+
+
+<!-- API INTERNA DE JUEGOS PARA EL CLIENTE -->
+{% elif usuario.tipo_usuario.descripcion == "CLIENTE" %}
+
+    <div class="container">
+        <div class="api">
+            <h1>API INTERNA DE JUEGOS</h1>
+            {% for juego in list_juegos %}
+                <p># {{juego.categoria}} - {{juego.nombre}} - ${{juego.precio|intcomma}}</p>
+            {% endfor %}
+        </div>
+        <!-- Agregar nuevo juego -->
+        <form action="{% url 'MainApp:apis-internas' %}" method="post">
+            {% csrf_token %}
+            {{form_juego.as_p|safe}}
+            <input type="hidden" name="tipo_form" value="juego">
+            <button type="submit" id='submit-btn'>Agregar ítem</button>
+        </form>
+    </div>
+
+
+{% endif %}
+
+{% endblock contenido_pagina %}
+
+
+
+{% block scripts_pagina %}
+
+{% endblock scripts_pagina %}

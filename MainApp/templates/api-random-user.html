@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block estilos_pagina %}
+    <link rel="stylesheet" href={% static "css/profile.css" %}>
+{% endblock estilos_pagina %}
+
+{% block scripts_pagina %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src={% static "js/apis-fetch.js" %}></script>
+{% endblock scripts_pagina %}
+
+{% block contenido_pagina %}
+    
+    
+    <div class="container">
+        <div class="api">
+            <h1>API RANDOM USER</h1>
+            <img id="imagen" src="{{random_user.picture.medium}}" alt="foto-perfil">
+            <p id="nombre">{{random_user.name.first}} {{random_user.name.last}}</p>
+            <p id="pais">{{random_user.location.country}}</p>
+            <p id="email">{{random_user.email}}</p>
+        </div>
+
+        <button id="update-btn" onclick="fetchRandomUser()">
+            Obtener cliente random
+        </button>
+    </div>
+
+    
+{% endblock contenido_pagina %}

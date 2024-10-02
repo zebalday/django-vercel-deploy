@@ -1,0 +1,1 @@
+from WebApp.wsgi import application

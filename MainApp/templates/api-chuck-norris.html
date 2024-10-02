@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block estilos_pagina %}
+    <link rel="stylesheet" href={% static "css/profile.css" %}>
+{% endblock estilos_pagina %}
+
+{% block scripts_pagina %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src={% static "js/apis-fetch.js" %}></script>
+{% endblock scripts_pagina %}
+
+{% block contenido_pagina %}
+    
+    <div class="container">
+        <div class="api">
+            <h1>API CHUCK NORRIS</h1>
+            <img id="icon" src="{{chuck_fact.icon_url}}" alt="">
+            <p id="fact">{{chuck_fact.value}}</p>
+        </div>
+        
+        <button id="logout-btn" onclick="fetchChuckFact()">
+            Obtener más info
+        </button>
+    </div>
+
+    
+{% endblock contenido_pagina %}

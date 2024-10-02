@@ -1,0 +1,36 @@
+{% load static %}
+
+{% block estilos_pagina %}
+    <link rel="stylesheet" href={% static "css/apis.css" %}>
+{% endblock estilos_pagina %}
+
+<div class="api-container">
+
+    <!-- APIS PROPIAS -->
+    <button class="btn-api api-propia"  onclick="location.href='{% url 'MainApp:apis-internas' %}'">
+        API {{usuario.tipo_usuario}}
+    </button>
+    
+    <!-- APIS EXTERNAS -->
+    <button class="btn-api api-externa"
+    {% if usuario.tipo_usuario.descripcion == "ADMINISTRADOR" or usuario.tipo_usuario.descripcion == "VENDEDOR" %} 
+    onclick="location.href='{% url 'MainApp:api-random-user' %}'"
+    {% elif usuario.tipo_usuario.descripcion == "CLIENTE" %} 
+    onclick="location.href='{% url 'MainApp:api-chuck-norris' %}'"
+    {% endif %}
+    >
+        API EXTERNA
+    </button>
+
+    <button 
+        class="btn-api"
+        onclick="location.href='{% url 'MainApp:api-juegos' %}'">
+        Api de Juegos
+    </button>
+
+    <button 
+        class="btn-api"
+        onclick="location.href='{% url 'MainApp:api-categorias' %}'">
+        Api de Categorías
+    </button>
+</div>

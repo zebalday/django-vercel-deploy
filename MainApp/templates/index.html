@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block contenido_pagina %}
+    <div class="container text-center">
+        <div class="row">
+            <div class="col" id="categories">
+                <h1>Categorías</h1>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="category">
+                    <a href= {% url "MainApp:action" %}>
+                        <img src={% static "img/accion.jpg"%} alt="">
+                        <p>Acción</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="category">
+                    <a href= {% url "MainApp:sports" %}>
+                        <img src={% static "img/deportes.jpg"%} alt="">
+                        <p>Deportes</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="category">
+                    <a href= {% url "MainApp:strategy" %}>
+                        <img src={% static "img/estrategia.jpg"%} alt="">
+                        <p>Estrategia</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="category">
+                    <a href= {% url "MainApp:adventures" %}>
+                        <img src={% static "img/aventura.jpg"%} alt="">
+                        <p>Aventuras</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="category">
+                    <a href= {% url "MainApp:rpg" %}>
+                        <img src={% static "img/rpg.jpg"%} alt="">
+                        <p>RPG</p>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+{% endblock contenido_pagina %}

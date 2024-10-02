@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block estilos_pagina %}
+    <link rel="stylesheet" href={% static "css/profile.css" %}>
+{% endblock estilos_pagina %}
+
+
+
+{% block contenido_pagina %}
+
+{% comment %} {{form}} {% endcomment %}
+{% for message in messages %}
+    <p>
+    {{message}}
+    </p>
+{% endfor %}
+
+
+<form action={% url "MainApp:profile" %} method="post">
+        {% csrf_token %}
+        <!-- TIPO -->
+        <div class="form-group">
+            {{form.tipo_usuario.label}}
+            {{form.tipo_usuario}}
+        </div>
+        <!-- USERNAME -->
+        <div class="form-group">
+            {{form.username.label}}
+            {{form.username}}
+        </div>
+        <!-- PASSWORD -->
+        <div class="form-group">
+            {{form.password.label}}
+            {{form.password}}
+        </div>
+        <!-- NOMBRE -->
+        <div class="form-group">
+            {{form.nombre.label}}
+            {{form.nombre}}
+        </div>
+        <!-- EMAIL -->
+        <div class="form-group">
+            {{form.email.label}}
+            <input type="email" id="email" name="email" value="{{ form.email.value }}" readonly>
+            {% comment %} {{form.email|add_attr:"readonly:readonly"}} {% endcomment %}
+        </div>
+        <!-- TELEFONO -->
+        <div class="form-group">
+            {{form.telefono.label}}
+            {{form.telefono}}
+        </div>
+        <!-- REGION -->
+        <div class="form-group">
+            {{form.region.label}}
+            {{form.region}}
+        </div>
+
+        <button id='update-btn' type="submit" class="btn mb-3">Actualizar información</button>
+</form>
+
+<form action={% url "MainApp:logout" %} method="GET">
+    <button id='logout-btn' type="submit" class="btn mb-3">Cerrar sesión</button>
+</form>
+
+
+{% include "apis.html" %}
+
+{% endblock contenido_pagina %}

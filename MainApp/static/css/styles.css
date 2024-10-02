@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+header .you {
+    background-color: #ff69b4; /* Rosado */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 36px;
+    margin-right: 0; /* Elimina el margen derecho */
+}
+
+header .games {
+    background-color: #000; /* Negro */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 36px;
+}
+
+.header-container {
+    margin-left: 0px;
+    margin-left: 0px;
+    border: solid black 1px;
+    padding: 10px;
+    background-color: #363636;
+    color: white;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+}
+
+.cart,
+.login {
+    justify-self: end;
+}
+
+.login {
+    grid-column: 4 / 5;
+    margin-left: 15px;
+}
+
+.cart {
+    grid-column: 3 / 4;
+}
+
+
+main {
+    padding: 20px;
+}
+
+.category img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.category p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.category, .login, .cart, #add, #submit-btn {
+    transition: transform 0.3s ease;
+}
+
+.category:hover {
+    transform: scale(1.2);
+}
+
+.login:hover {
+    transform: scale(1.1);
+}
+
+.cart:hover {
+    transform: scale(1.1);
+}
+
+#add:hover{
+    transform: scale(1.1);
+}
+
+#submit-btn:hover {
+    transform: scale(1.1);
+}
+
+#categories{
+    padding: 20px;
+}
+
+#mail, #submit-container-btn{
+    padding: 10px;
+}
+
+#submit-btn{
+    background-color: #1dd882;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+

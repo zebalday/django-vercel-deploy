@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block contenido_pagina %}
+    <div class="container text-center">
+        <div class="row">
+            <div class="col" id="categories">
+                <h1>Juegos de RPG</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <h4>Nombre</h4>
+            </div>
+            <div class="col">
+                <h4>Desarrolladora</h4>
+            </div>
+            <div class="col">
+                <h4>Fecha de lanzamiento</h4>
+            </div>
+            <div class="col">
+                <h4>Precio</h4>
+            </div>
+            <div class="col">
+
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <a>The Witcher 3: Wild Hunt</a>
+            </div>
+            <div class="col">
+                <p>CD Projekt Red</p>
+            </div>
+            <div class="col">
+                <p>2015-05-19</p>
+            </div>
+            <div class="col">
+                <p>49990 CLP</p>
+            </div>
+            <div class="col">
+                <button style="border: none; background:none" id="add" onclick="showAlert()">
+                    <img src={% static "img/add.png" %} style="width: 25px;">
+                </button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <a>Final Fantasy XV</a>
+            </div>
+            <div class="col">
+                <p>Square Enix</p>
+            </div>
+            <div class="col">
+                <p>2016-11-29</p>
+            </div>
+            <div class="col">
+                <p>54990 CLP</p>
+            </div>
+            <div class="col">
+                <button style="border: none; background:none" id="add" onclick="showAlert()">
+                    <img src={% static "img/add.png" %} style="width: 25px;">
+                </button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <a>Persona 5 Royal</a>
+            </div>
+            <div class="col">
+                <p>Atlus</p>
+            </div>
+            <div class="col">
+                <p>2020-03-31</p>
+            </div>
+            <div class="col">
+                <p>39990 CLP</p>
+            </div>
+            <div class="col">
+                <button style="border: none; background:none" id="add" onclick="showAlert()">
+                    <img src={% static "img/add.png" %} style="width: 25px;">
+                </button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <a>Dragon Age: Inquisition</a>
+            </div>
+            <div class="col">
+                <p>BioWare</p>
+            </div>
+            <div class="col">
+                <p>2014-11-18</p>
+            </div>
+            <div class="col">
+                <p>44990 CLP</p>
+            </div>
+            <div class="col">
+                <button style="border: none; background:none" id="add" onclick="showAlert()">
+                    <img src={% static "img/add.png" %} style="width: 25px;">
+                </button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <a>Cyberpunk 2077</a>
+            </div>
+            <div class="col">
+                <p>CD Projekt Red</p>
+            </div>
+            <div class="col">
+                <p>2020-12-10</p>
+            </div>
+            <div class="col">
+                <p>59990 CLP</p>
+            </div>
+            <div class="col">
+                <button style="border: none; background:none" id="add" onclick="showAlert()">
+                    <img src={% static "img/add.png" %} style="width: 25px;">
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock contenido_pagina %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block contenido_pagina %}
+    <div class="container text-center">
+        <div class="row">
+            <div class="col" id="categories">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+                <h1>Inicia sesión con tu cuenta</h1>
+            </div>
+        </div>
+        <form action={% url "MainApp:login" %} method='post'>
+            {% csrf_token %}
+            <div class="row justify-content-center" id="mail">
+                <div class="col-md-1">
+                    <label for="email" class="col-form-label">Correo</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" id="correo" name='email' class="form-control" placeholder="correo@ejemplo.com" aria-label=".form-control-lg example">
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-1">
+                    <label for="password" class="col-form-label">Contraseña</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="password" id="password" name='password' class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-auto" id="submit-container-btn">
+                    <button id="submit-btn" type="submit" class="btn mb-3">Iniciar sesión</button>
+                </div>
+            </div>
+        </form>
+
+        <div>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+            <a href={% url "MainApp:register" %}>Crear nueva cuenta</a>
+        </div>
+    </div>
+{% endblock contenido_pagina %}

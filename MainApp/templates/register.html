@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% comment %} ESTILOS PROPIOS {% endcomment %}
+{% block estilos_pagina %}
+{% endblock estilos_pagina %}
+
+{% comment %} CONETNIDO PROPIO {% endcomment %}
+{% block contenido_pagina %}
+
+
+<div
+    style="
+    width: 100%; 
+    display: flex; 
+    flec-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin: 1rem;
+    "
+>
+
+    {% if messages %}
+        {% for message in messages %}
+        <p>
+            {{message}}
+        </p>
+        {% endfor %}
+    {% endif %}
+
+
+    <form action={% url "MainApp:register" %} method="post">
+        {% csrf_token %}
+        {{form.as_p|safe}}
+        <button id='submit-btn' type="submit" class="btn mb-3">Registrarse</button>
+    </form>
+</div>
+
+{% endblock contenido_pagina %}

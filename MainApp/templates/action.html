@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block contenido_pagina %}
+    <div class="container text-center">
+        <div class="row">
+            <div class="col" id="categories">
+                <h1>Juegos de acción</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <h4>Nombre</h4>
+            </div>
+            <div class="col">
+                <h4>Desarrolladora</h4>
+            </div>
+            <div class="col">
+                <h4>Fecha de lanzamiento</h4>
+            </div>
+            <div class="col">
+                <h4>Precio</h4>
+            </div>
+            <div class="col">
+                
+            </div>
+            
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <a>The Legend of Zelda: Breath of the Wild</a>
+            </div>
+            <div class="col">
+                <p>Nintendo</p>
+            </div>
+            <div class="col">
+                <p>2017-03-03</p>
+            </div>
+            <div class="col">
+                <p>60000 CLP</p>
+            </div>
+            <div class="col">
+                <button style="border: none; background:none" id="add" onclick="showAlert()">
+                    <img src={%static "img/add.png" %} style="width: 25px;">
+                </button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <a>Red Dead Redemption 2</a>
+            </div>
+            <div class="col">
+                <p>Rockstar Games</p>
+            </div>
+            <div class="col">
+                <p>2018-10-26</p>
+            </div>
+            <div class="col">
+                <p>60000 CLP</p>
+            </div>
+            <div class="col">
+                <button style="border: none; background:none" id="add" onclick="showAlert()">
+                    <img src={% static "img/add.png" %} style="width: 25px;">
+                </button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <a>Ghost of Tsushima</a>
+            </div>
+            <div class="col">
+                <p>Sucker Punch Productions</p>
+            </div>
+            <div class="col">
+                <p>2020-07-17</p>
+            </div>
+            <div class="col">
+                <p>59990 CLP</p>
+            </div>
+            <div class="col">
+                <button style="border: none; background:none" id="add" onclick="showAlert()">
+                    <img src={% static "img/add.png" %} style="width: 25px;">
+                </button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <a>Call of Duty: Modern Warfare</a>
+            </div>
+            <div class="col">
+                <p>Infinity Ward</p>
+            </div>
+            <div class="col">
+                <p>2019-10-25</p>
+            </div>
+            <div class="col">
+                <p>49990 CLP</p>
+            </div>
+            <div class="col">
+                <button style="border: none; background:none" id="add" onclick="showAlert()">
+                    <img src={% static "img/add.png" %} style="width: 25px;">
+                </button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <a>God of War</a>
+            </div>
+            <div class="col">
+                <p>Santa Monica Studio</p>
+            </div>
+            <div class="col">
+                <p>2018-04-20</p>
+            </div>
+            <div class="col">
+                <p>49990 CLP</p>
+            </div>
+            <div class="col">
+                <button style="border: none; background:none" id="add" onclick="showAlert()">
+                    <img src={% static "img/add.png" %} style="width: 25px;">
+                </button>
+            </div>
+        </div>
+
+
+        
+    </div>
+{% endblock contenido_pagina %}
