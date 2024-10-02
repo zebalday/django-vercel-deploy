@@ -256,8 +256,8 @@ class APIsInternas(TemplateView):
     def get(self, request):
 
         # Datos
-        list_juegos = XE_Juego.objects.all()
-        list_categorias = XE_Categoria.objects.all()
+        list_juegos = XE_Juego.objects.all().order_by('-precio')[:5]
+        list_categorias = XE_Categoria.objects.all().order_by('nombre')[:5]
         usuario = XE_Usuario.objects.get(email = request.session['usuario']['email'])
         self.context['list_juegos'] = list_juegos
         self.context['list_categorias'] = list_categorias

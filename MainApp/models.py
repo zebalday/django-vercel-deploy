@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 # TIPO USUARIO
 class XE_TipoUsuario(models.Model):
-    descripcion = models.TextField(
+    descripcion = models.CharField(
         max_length = 50,
         verbose_name = 'Tipo usuario',
         blank = False,
@@ -33,14 +33,14 @@ class XE_Region(models.Model):
 
 # USUARIO
 class XE_Usuario(models.Model):
-    nombre = models.TextField(
+    nombre = models.CharField(
         max_length = 150,
         verbose_name = "Nombre",
         blank = False,
         null = False,
         editable = True
     )
-    username = models.TextField(
+    username = models.CharField(
         max_length = 150,
         verbose_name = "Nombre de usuario",
         blank = False,
@@ -48,7 +48,7 @@ class XE_Usuario(models.Model):
         unique = False,
         editable = True
     )
-    password = models.TextField(
+    password = models.CharField(
         max_length = 150,
         verbose_name = "Contraseña",
         blank = False,
@@ -100,7 +100,7 @@ class XE_Usuario(models.Model):
 
 # CATEGORIA JUEGO
 class XE_Categoria(models.Model):
-    nombre = models.TextField(
+    nombre = models.CharField(
         max_length = 50,
         verbose_name = 'Categoría Juego',
         blank = False,
@@ -121,7 +121,7 @@ class XE_Juego(models.Model):
         blank = False,
         null = False
     )
-    nombre = models.TextField(
+    nombre = models.CharField(
         max_length = 50,
         verbose_name = 'Tipo usuario',
         blank = False,

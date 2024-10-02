@@ -110,8 +110,8 @@ DATABASES = {
         'PORT': '',
 
     }
-} """
-
+}
+ """
 
 
 # Password validation
