@@ -99,12 +99,13 @@ WSGI_APPLICATION = 'WebApp.wsgi.application'
 
 # DATABASE POR DEFECTO --> SQLITE3
 
-DATABASES = {    
+""" DATABASES = {    
 'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     } 
 }
+ """
 
 # CONEXIÓN A ORACLE DATABASE
 """ DATABASES = {
@@ -119,6 +120,7 @@ DATABASES = {
     }
 }
  """
+
 
 # CONEXIÓN A SUPABASE
 DATABASES = {
