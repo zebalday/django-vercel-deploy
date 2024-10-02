@@ -18,8 +18,15 @@ import cx_Oracle
 
 # Inicializar las variables del entorno
 dotenv.load_dotenv()
+# ORACLE
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
+# SUPABASE
+SUPA_DB_NAME=os.getenv('SUPA_DB_NAME')
+SUPA_DB_USER=os.getenv('SUPA_DB_USER')
+SUPA_DB_PASSWORD=os.getenv('SUPA_DB_PASSWORD')
+SUPA_DB_HOST=os.getenv('SUPA_DB_HOST')
+SUPA_DB_PORT=os.getenv('SUPA_DB_PORT')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 
@@ -112,6 +119,18 @@ DATABASES = {
     }
 }
  """
+
+# CONEXIÓN A SUPABASE
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': SUPA_DB_NAME,
+        'USER': SUPA_DB_USER,
+        'PASSWORD': SUPA_DB_PASSWORD,
+        'HOST': SUPA_DB_HOST,
+        'PORT': SUPA_DB_PORT,
+    }
+}
 
 
 # Password validation
